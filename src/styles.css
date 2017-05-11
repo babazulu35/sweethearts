@@ -36,10 +36,8 @@ header {
     background-image: url('/assets/images/animals/animal_sprite.png');
     width: 200px;
     height: 205px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: inline-block;
     animation-name: scaler;
     animation-duration: 1s;
     animation-fill-mode: both;
