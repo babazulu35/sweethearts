@@ -1,0 +1,6 @@
+<div class="c-selection-pill clearfix">
+    <div *ngFor="let pill of data.rank" class="c-selection-pill--holder">
+        <input #input type="radio" (click)="select(pill.rate)" id="{{pill.value}}" name="gender" value="{{pill.value}}">
+        <label for="{{pill.value}}">{{pill.value}}</label>
+    </div>
+</div>

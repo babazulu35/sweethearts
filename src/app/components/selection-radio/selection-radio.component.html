@@ -1,0 +1,7 @@
+<div class="c-selection-radio">
+    <div class="c-selection-radio__item" *ngFor=" let radioData of data.rank">
+        <input id="{{radioData.value}}" #input type="radio" (click)="select(radioData.rate)" name="radioSet">
+        <label for="{{radioData.value}}">{{radioData.value}}</label>
+    </div>
+
+</div>

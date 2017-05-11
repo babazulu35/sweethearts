@@ -1,0 +1,24 @@
+.c-button {
+    width: auto;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    box-shadow: inherit;
+    border: inherit;
+    box-shadow: 1px 0px 3px #333333;
+}
+
+.c-button--primary {
+    background: #FB5868;
+    color: #efefef;
+    cursor: pointer;
+}
+
+.c-button--primary:hover {
+    cursor: pointer;
+}
+
+.c-button--primary:focus {
+    outline: none;
+}
