@@ -45,7 +45,6 @@
 .c-selection-radio__item input[type=radio]:checked+label:before {
     content: "\2022";
     color: #FB5868;
-    font-size: 40px;
-    text-align: center;
-    position: absoulte;
+    font-size: 38px;
+    line-height: 15px;
 }

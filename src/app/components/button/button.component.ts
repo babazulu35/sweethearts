@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() value:string;
 
+  @Input() isDisabled:boolean = false;
+
   @Input() theme:string = 'primary';
   constructor() { }
 

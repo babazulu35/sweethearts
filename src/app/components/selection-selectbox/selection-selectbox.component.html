@@ -1,3 +1,6 @@
-<p>
-  selection-selectbox works!
-</p>
+<div class="c-selection-selectbox">
+    <select #select (change)="onChange($event.target.value)" name="sel2">
+    <option disabled>Select Your Mood...</option>
+    <option [value]="option.rate" *ngFor="let option of data.rank">{{option.value}}</option>
+</select>
+</div>

@@ -1,1 +1,74 @@
-<app-main></app-main>
+<div class="main">
+    <header>
+        <div class="header">
+            <h1>Cuddle Index</h1>
+            <span><em>higher the index, more cuddly you are</em></span>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+
+            <div class="c-placeholder">
+                <div class="c-placeholder__item-title">
+                    Age
+                </div>
+                <div class="c-placeholder__item-app">
+                    <app-range-slider (changeHandler)="actionEvent($event,'age')" [range]="{min:ageData.range.min,max:ageData.range.max}"></app-range-slider>
+                </div>
+
+            </div>
+            <div class="c-placeholder">
+                <div class="c-placeholder__item-title">
+                    Height(cm)
+                </div>
+                <div class="c-placeholder__item-app">
+                    <app-range-slider (changeHandler)="actionEvent($event,'height')" [range]="{min:heightData.range.min,max:heightData.range.max}"></app-range-slider>
+                </div>
+
+            </div>
+            <div class="c-placeholder">
+                <div class="c-placeholder__item-title">
+                    Mood
+                </div>
+                <div class="c-placeholder__item-app">
+                    <app-selection-selectbox (changeHandler)="actionEvent($event,'select')" [data]="optionData"></app-selection-selectbox>
+                </div>
+            </div>
+            <div class="c-placeholder">
+                <div class="c-placeholder__item-title">
+                    Genre
+                </div>
+                <div class="c-placeholder__item-app">
+                    <app-selection-radio (changeHandler)="actionEvent($event,'radio')" [data]="radioData"></app-selection-radio>
+                </div>
+            </div>
+            <div class="c-placeholder">
+                <div class="c-placeholder__item-title">
+                    Hair Color
+                </div>
+                <div class="c-placeholder__item-app">
+                    <app-selection-pill (changeHandler)="actionEvent($event,'pill')" [data]="pillData"></app-selection-pill>
+                </div>
+            </div>
+            <div class="c-placeholder h-text-align--r">
+
+                <app-button *ngIf="isDisabled" [isDisabled]="true" [value]="'Calculate'"></app-button>
+                <app-button *ngIf="!isDisabled" [isDisabled]="false" (click)="calculationResult()" [value]="'Calculate'"></app-button>
+            </div>
+            <div *ngIf="hasResult">
+                <div class="result-container">
+                    <div class="c-placeholder--absolute">
+                        <div class="animal-avatar animated tada animal-avatar--{{avatar}}"></div>
+                        <div class="rank-point">
+                            <span> Rank: {{finalRank}} </span>
+                            <app-button [value]="'Another Shot'" (click)="again()"></app-button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>

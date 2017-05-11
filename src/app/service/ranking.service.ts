@@ -6,6 +6,7 @@ export class RankingService {
   private ageRank:{range:{min:number,max:number},rank:{rate:number,value:{}}[]};
   private pillRank:{rank:{rate:number,value:{}}[]};
   private radioRank:{rank:{rate:number,value:{}}[]}
+  private optionRank:{rank:{rate:number,value:{}}[]}
 
   
   @Output() rankingServiceEvent = new EventEmitter<{rank:any,type:any}>();
@@ -105,6 +106,40 @@ export class RankingService {
      }
      ]
    }
+  }
+
+  getOptionRankData(){
+    return this.optionRank = {
+      rank:[{
+        rate:1,
+        value:'Charmful'
+      },
+      {
+        rate:2,
+        value:'Aggressive'
+      },
+      {
+        rate:3,
+        value:'Chilled'
+      },
+      {
+        rate:4,
+        value:'Sexy'
+      },
+      {
+        rate:5,
+        value:'Depressed'
+      },
+      {
+        rate:6,
+        value:'Motivated'
+      },
+      {
+        rate:7,
+        value:'Emotional'
+      }
+      ]
+    }
   }
 
   getRadioRankData() {

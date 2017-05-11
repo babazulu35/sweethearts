@@ -9,6 +9,13 @@
     box-shadow: 1px 0px 3px #333333;
 }
 
+.c-button:disabled {
+    background: #efefef;
+    color: #d5d5d5;
+    cursor: not-allowed;
+    box-shadow: inherit;
+}
+
 .c-button--primary {
     background: #FB5868;
     color: #efefef;
