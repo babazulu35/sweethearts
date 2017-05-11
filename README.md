@@ -1,6 +1,7 @@
 # SocialSweethearts Js Test Task
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.30.
+After Checkout and angular-cli installation plese type `npm install ` to install missed packages
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
