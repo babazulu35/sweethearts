@@ -11,7 +11,7 @@
 
 .c-selection-selectbox select {
     padding: 5px 8px;
-    width: 90%;
+    width: 100%;
     border: none;
     box-shadow: none;
     background: transparent;
@@ -19,11 +19,16 @@
     -webkit-appearance: none;
 }
 
-.c-selection-selectbox:after {
-    content: '⌄';
+.c-selection-selectbox:before {
+    content: '\2194';
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 7px;
+    top: 7px;
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Safari */
+    transform: rotate(90deg);
 }
 
 .c-selection-selectbox select:focus {

@@ -6,7 +6,8 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./selection-selectbox.component.css']
 })
 export class SelectionSelectboxComponent implements OnInit {
-  @Input() data:Array<Object>;
+  
+  @Input() data;
 
   @Output() changeHandler = new EventEmitter<{rate:number}>();
 
