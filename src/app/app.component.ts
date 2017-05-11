@@ -2,6 +2,9 @@ import { AppModule } from './app.module';
 import { ResultService } from './service/result.service';
 import { RankingService } from './service/ranking.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { timer} from 'rxjs/Observable/timer';
+
 
 @Component({
   selector: 'app-root',
@@ -22,7 +25,7 @@ export class AppComponent implements OnInit {
   private radioRank:number;
   private optionRank:number;
   private finalResult:number;
-  private finalRank:number;
+  private finalRank:any;
 
   private isLoading:boolean = false;
   private hasResult:boolean = false;
@@ -32,6 +35,10 @@ export class AppComponent implements OnInit {
   private avatar:string;
 
   private isDisabled:boolean;
+
+  private timers:Observable<any>;
+  private subscription;
+
   
   constructor(private rankingService:RankingService, private resultService: ResultService) { 
     this.ageData = rankingService.getAgeRankData(); /* Get From Ranking Service Age Rank Mock Data */
@@ -42,6 +49,11 @@ export class AppComponent implements OnInit {
 }
 
   ngOnInit() {
+
+
+
+
+
     this.isDisabled = true;
      this.resultService.resultEventEmit.subscribe(result => 
      {
@@ -49,8 +61,14 @@ export class AppComponent implements OnInit {
        if(result) {
          this.hasResult = true;
          this.finalResult = result.result;
-         this.finalRank = result.rank;
+         this.finalRank = '';
          this.avatar = result.avatar;
+
+          this.timers = Observable.interval(100).timeInterval().take(result.rank).delay(100);
+          this.timers.subscribe( x => { 
+            this.finalRank = (x.value + 1) 
+          }
+          )
        }
      });
   }
@@ -102,7 +120,6 @@ export class AppComponent implements OnInit {
   }  
 
   private calculationResult() {
-    console.log(this.isValid);
     this.resultService.getResult([this.ageRank,this.heightRank,this.pillRank,this.radioRank,this.optionRank]); /* Set All Rate Data in ResultService to Calculating Result */
    
   }
