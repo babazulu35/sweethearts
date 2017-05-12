@@ -54,7 +54,7 @@ header {
 }
 
 .animal-avatar--monk {
-    background-position: -165px 0px;
+    background-position: -165px -25px;
 }
 
 .animal-avatar--donk {
@@ -63,15 +63,16 @@ header {
 }
 
 .animal-avatar--duck {
-    background-position: -545px -30px;
+    background-position: -557px -30px;
 }
 
 .animal-avatar--tweet {
-    background-position: -5px -235px;
+    background-position: -2px -233px;
+    width: 175px !important;
 }
 
 .animal-avatar--dog {
-    background-position: 390px -228px;
+    background-position: 378px -228px;
 }
 
 .animal-avatar--monkey {

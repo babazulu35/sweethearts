@@ -98,7 +98,7 @@ export class RankingService {
      },
      {
        rate:5,
-       value:'Bald'
+       value:'White'
      },
      {
        rate:1,
