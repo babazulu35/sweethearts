@@ -1,24 +1,29 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-range-slider',
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.css'],
 })
-export class RangeSliderComponent implements OnInit {
+export class RangeSliderComponent implements OnInit,AfterViewInit {
   
-  @Input() range:{min:number,max:number}[];
+  @Input() data;
   
   @Output() changeHandler = new EventEmitter<{range:any}>();
 
-  private currentRange:any;
+  @Input() currentRange:any;
 
   constructor() { }
 
   ngOnInit() {
     
     /* set min range as range default on app initialize */
-   this.currentRange = this.range['min'];
+    this.currentRange = this.data.range.min;
+  
+  }
+  
+  ngAfterViewInit() {
+
   }
 
   change(event) {

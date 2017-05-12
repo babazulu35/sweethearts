@@ -13,7 +13,7 @@
                     Age
                 </div>
                 <div class="c-placeholder__item-app">
-                    <app-range-slider (changeHandler)="actionEvent($event,'age')" [range]="{min:ageData.range.min,max:ageData.range.max}"></app-range-slider>
+                    <app-range-slider (changeHandler)="actionEvent($event,'age')" [data]="ageData"></app-range-slider>
                 </div>
 
             </div>
@@ -22,7 +22,7 @@
                     Height(cm)
                 </div>
                 <div class="c-placeholder__item-app">
-                    <app-range-slider (changeHandler)="actionEvent($event,'height')" [range]="{min:heightData.range.min,max:heightData.range.max}"></app-range-slider>
+                    <app-range-slider (changeHandler)="actionEvent($event,'height')" [data]="heightData"></app-range-slider>
                 </div>
 
             </div>

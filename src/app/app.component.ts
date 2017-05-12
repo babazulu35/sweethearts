@@ -13,11 +13,11 @@ import { timer} from 'rxjs/Observable/timer';
   providers:[RankingService,ResultService]
 })
 export class AppComponent implements OnInit {
-  private ageData:any;
-  private heightData:any;
-  private pillData:any;
-  private radioData:any
-  private optionData:any;
+  public ageData:any;
+  public heightData:any;
+  public pillData:any;
+  public radioData:any
+  public optionData:any;
   
   private ageRank:number;
   private heightRank:number;
@@ -28,13 +28,13 @@ export class AppComponent implements OnInit {
   private finalRank:any;
 
   private isLoading:boolean = false;
-  private hasResult:boolean = false;
+  public hasResult:boolean = false;
 
   private isValid = [];
 
   private avatar:string;
 
-  private isDisabled:boolean;
+  public isDisabled:boolean;
 
   private timers:Observable<any>;
   private subscription;

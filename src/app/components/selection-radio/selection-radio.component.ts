@@ -7,7 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class SelectionRadioComponent implements OnInit {
   
-  @Input() data:Array<Object>;
+  @Input() data;
 
   @Output() changeHandler = new EventEmitter<{rate:number}>();
 

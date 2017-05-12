@@ -3,5 +3,5 @@
       <!--Result From Rage Slider-->
       {{currentRange}}
     </span>
-    <input [ngModel]="currentRange" (ngModelChange)="change($event)" type="range" name="points" min="{{range.min}}" max="{{range.max}}">
+    <input [ngModel]="currentRange" (ngModelChange)="change($event)" type="range" name="points" min="{{data.range.min}}" max="{{data.range.max}}">
 </div>
