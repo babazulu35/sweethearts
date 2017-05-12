@@ -14,7 +14,6 @@ export class SelectionSelectboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.data);
   }
 
   onChange(event) {

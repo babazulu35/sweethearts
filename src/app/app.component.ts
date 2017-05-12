@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
     this.isDisabled = true;
      this.resultService.resultEventEmit.subscribe(result => 
      {
-       console.log("Result Service Subscribe",result);
        if(result) {
          this.hasResult = true;
          this.finalResult = result.result;
@@ -67,7 +66,7 @@ export class AppComponent implements OnInit {
           this.timers = Observable.interval(100).timeInterval().take(result.rank).delay(100);
           this.timers.subscribe( x => { 
             this.finalRank = (x.value + 1) 
-          }
+            }
           )
        }
      });
@@ -78,7 +77,6 @@ export class AppComponent implements OnInit {
   }
 
   actionEvent($event,type:string){
-    console.log($event);
     switch(type){
       case 'age' :
         this.ageRank = this.rankingService.getRank($event.range,type); /* Get rate data in the range of what you post */    

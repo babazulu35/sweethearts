@@ -16,12 +16,10 @@ export class SelectionPillComponent implements OnInit {
    }
   
   ngOnInit() {
-    console.log("Pill Data",this.data);  
 
 }
   
   select(value:number) {
-    console.log("Pill Rate",value);
     this.changeHandler.emit({
       rate: value,
     })

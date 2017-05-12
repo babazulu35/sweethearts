@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-range-slider',
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.css'],
 })
-export class RangeSliderComponent implements OnInit,AfterViewInit {
+export class RangeSliderComponent implements OnInit {
   
   @Input() data;
   
@@ -22,10 +22,6 @@ export class RangeSliderComponent implements OnInit,AfterViewInit {
   
   }
   
-  ngAfterViewInit() {
-
-  }
-
   change(event) {
     this.currentRange = event;
     this.changeHandler.emit({
