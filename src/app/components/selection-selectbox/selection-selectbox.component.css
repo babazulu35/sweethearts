@@ -17,13 +17,18 @@
     background: transparent;
     background-image: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
 }
 
 .c-selection-selectbox:before {
     content: '\2194';
     position: absolute;
-    right: 7px;
-    top: 7px;
+    right: 12px;
+    top: 9px;
     -ms-transform: rotate(90deg);
     /* IE 9 */
     -webkit-transform: rotate(90deg);
