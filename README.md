@@ -6,7 +6,7 @@ After Checkout and angular-cli installation plese type `npm install ` to install
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Runind On Docker
+## Runing On Docker
 Install Docker for your OS https://docs.docker.com/engine/installation/
 Run `docker-compose up`
 
