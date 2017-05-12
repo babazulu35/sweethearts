@@ -37,7 +37,7 @@
     border: 1px solid #Aebd38;
     height: 24px;
     width: 24px;
-    border-radius: 12px;
+    border-radius: 50%;
     background: #598234;
     cursor: pointer;
     -webkit-appearance: none;
@@ -59,7 +59,7 @@
     border: 1px solid #Aebd38;
     height: 24px;
     width: 24px;
-    border-radius: 12px;
+    border-radius: 50%;
     background: #598234;
     cursor: pointer;
 }
@@ -91,7 +91,7 @@
     border: 1px solid #Aebd38;
     height: 24px;
     width: 24px;
-    border-radius: 12px;
+    border-radius: 50%;
     background: #598234;
     cursor: pointer;
 }
