@@ -1,0 +1,28 @@
+/*Buttons Component*/
+
+$c-button:( primary-bg: #FB5868, padding: 10px 20px, shadow: 1px 0px 3px #333333, disabled: #efefef, font-size: 1em, radius:10px);
+$c-button: map-merge($c-button, getSettingsMap("c-button"));
+.c-button {
+    width: auto;
+    text-align: center;
+    padding: map-get($c-button, padding);
+    font-size: map-get($c-button, font-size);
+    border-radius: map-get($c-button, radius);
+    box-shadow: map-get($c-button, shadow);
+    border: inherit;
+    &:disabled {
+        background: map-get($c-button, disabled);
+        color: #d5d5d5;
+        cursor: not-allowed;
+        box-shadow: inherit;
+    }
+    &--primary {
+        background: map-get($c-button, primary-bg);
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

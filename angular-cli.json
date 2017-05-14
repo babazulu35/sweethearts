@@ -18,7 +18,7 @@
         "prefix": "app",
         "styles": [
             "reset.css",
-            "styles.css"
+            "assets/sass/main.scss"
         ],
         "scripts": [],
         "environments": {
@@ -47,7 +47,7 @@
         }
     },
     "defaults": {
-        "styleExt": "css",
+        "styleExt": "scss",
         "prefixInterfaces": false,
         "inline": {
             "style": false,
