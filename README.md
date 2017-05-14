@@ -1,5 +1,7 @@
 # SocialSweethearts Js Test Task
 
+-- For Sass Version please See the sass-version Branch
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.30.
 After Checkout and angular-cli installation plese type `npm install ` to install missed packages
 
