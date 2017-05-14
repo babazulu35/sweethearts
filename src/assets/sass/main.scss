@@ -1,6 +1,10 @@
-/*General Setting*/
+/* Html Elements*/
 
+@import 'elements/elements.html';
+@import 'elements/elements.header';
 @import 'objects/objects.general';
+@import 'objects/objects.header';
+@import 'objects/objects.media.scss';
 
 /*Components*/
 
@@ -9,3 +13,9 @@
 @import 'components/selection-pill/components.selection-pill';
 @import 'components/selection-radio/components.selection-radio';
 @import 'components/selection-selectbox/components.selection-selectbox';
+
+/*Utilities*/
+
+@import 'utilities/utilities.animal-avatar';
+@import 'utilities/animation/animation.scaler';
+@import 'utilities/utilities.clearfix';

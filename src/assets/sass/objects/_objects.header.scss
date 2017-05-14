@@ -1,0 +1,15 @@
+.header {
+    text-shadow: 1px 0px 5px #333;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    vertical-align: bottom;
+    h1 {
+        font-size: 2.0em;
+    }
+    span {
+        font-size: 1.2em;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 0em 0.7em;
+    }
+}

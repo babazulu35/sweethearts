@@ -1,6 +1,6 @@
 /*Buttons Component*/
 
-$c-button:( primary-bg: #FB5868, padding: 10px 20px, shadow: 1px 0px 3px #333333, disabled: #efefef, font-size: 1em, radius:10px);
+$c-button:( primary-bg: #FB5868, color:#ffffff, padding: 10px 20px, shadow: 1px 0px 3px #333333, disabled: #efefef, font-size: 1em, radius:10px);
 $c-button: map-merge($c-button, getSettingsMap("c-button"));
 .c-button {
     width: auto;
@@ -18,6 +18,7 @@ $c-button: map-merge($c-button, getSettingsMap("c-button"));
     }
     &--primary {
         background: map-get($c-button, primary-bg);
+        color: map-get($c-button, color);
         &:hover {
             cursor: pointer;
         }

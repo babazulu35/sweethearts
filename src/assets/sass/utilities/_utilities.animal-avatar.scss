@@ -1,0 +1,41 @@
+$u-animal-avatar:();
+$u-animal-avatar: map-merge($u-animal-avatar, getSettingsMap("u-animal-avatar"));
+.animal-avatar {
+    background-image: url('/assets/images/animals/animal_sprite.png');
+    width: 200px;
+    height: 205px;
+    position: relative;
+    display: inline-block;
+    animation-name: scaler;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    &--monk {
+        background-position: -165px -25px;
+    }
+    &--donk {
+        background-position: -360px 0px;
+        height: 230px !important;
+    }
+    &--duck {
+        background-position: -557px -30px;
+    }
+    &--tweet {
+        background-position: -2px -233px;
+        width: 175px !important;
+    }
+    &--dog {
+        background-position: 378px -228px;
+    }
+    &--monkey {
+        background-position: 180px -226px;
+    }
+    &--elephant {
+        background-position: 14px -437px;
+    }
+    &--penguin {
+        background-position: 377px -437px;
+    }
+    &--leo {
+        background-position: 377px -648px;
+    }
+}
