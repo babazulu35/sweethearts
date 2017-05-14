@@ -1,6 +1,6 @@
 /*Buttons Component*/
 
-$c-button:( primary-bg: #FB5868, color:#ffffff, padding: 10px 20px, shadow: 1px 0px 3px #333333, disabled: #efefef, font-size: 1em, radius:10px);
+$c-button:( primary-bg: map-get($color-schema, carnation), color: map-get($color-schema, snowWhite), padding: 10px 20px, shadow: 1px 0px 3px #333333, disabled: map-get($color-schema, gallery), disabled-color:map-get($color-schema, light-gray), font-size: 1em, radius:10px);
 $c-button: map-merge($c-button, getSettingsMap("c-button"));
 .c-button {
     width: auto;
@@ -12,7 +12,7 @@ $c-button: map-merge($c-button, getSettingsMap("c-button"));
     border: inherit;
     &:disabled {
         background: map-get($c-button, disabled);
-        color: #d5d5d5;
+        color: map-get($c-button, disabled-color);
         cursor: not-allowed;
         box-shadow: inherit;
     }

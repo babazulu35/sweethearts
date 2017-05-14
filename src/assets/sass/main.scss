@@ -2,7 +2,11 @@
 
 @import 'elements/elements.html';
 @import 'elements/elements.header';
+
+/* Objects */
+
 @import 'objects/objects.general';
+@import 'objects/objects.color-schema';
 @import 'objects/objects.header';
 @import 'objects/objects.media.scss';
 

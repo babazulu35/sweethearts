@@ -1,4 +1,4 @@
-$c-selection-pill:( border:1px solid #f7fe81, );
+$c-selection-pill:( hover-bg: map-get($color-schema, faded-yellow), border: 1px solid map-get($color-schema, faded-yellow), label-color: map-get($color-schema, sap-green), background: map-get($color-schema, android-green), color: map-get($color-schema, carnation), checked: ( border: map-get($color-schema, light-gray)));
 $c-selection-pill: map-merge($c-selection-pill, getSettingsMap("c-selection-pill"));
 .c-selection-pill {
     width: 100%;
@@ -14,10 +14,10 @@ $c-selection-pill: map-merge($c-selection-pill, getSettingsMap("c-selection-pill
                 label {
                     &:before {
                         content: '';
-                        color: #FB5868 !important;
-                        background: #F7FE81 !important;
-                        border-top: 1px solid #D5D5D5 !important;
-                        border-bottom: 1px solid #D5D5D5 !important;
+                        color: map-get($c-selection-pill, color) !important;
+                        background: map-get($c-selection-pill, hover-bg);
+                        border-top: 1px solid map-deep-get($c-selection-pill, checked, border) !important;
+                        border-bottom: 1px solid map-deep-get($c-selection-pill, checked, border) !important;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -32,8 +32,8 @@ $c-selection-pill: map-merge($c-selection-pill, getSettingsMap("c-selection-pill
     label {
         padding: 1.1em;
         text-align: center;
-        background: #AEBD38;
-        color: #598234;
+        background: map-get($c-selection-pill, background);
+        color: map-get($c-selection-pill, label-color);
         border-top: map-get($c-selection-pill, border);
         border-bottom: map-get($c-selection-pill, border);
         border-right: map-get($c-selection-pill, border);
@@ -42,9 +42,9 @@ $c-selection-pill: map-merge($c-selection-pill, getSettingsMap("c-selection-pill
         z-index: 1;
         display: block;
         &:hover {
-            background: #f7fe81;
+            background: map-get($c-selection-pill, hover-bg);
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-            color: #FB5868;
+            color: map-get($c-selection-pill, color);
         }
         &:before {
             content: "";

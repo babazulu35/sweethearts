@@ -1,0 +1,2 @@
+$color-schema:( snowWhite: #ffffff, light-gray: #D5D5D5, gallery: #EFEFEF, faded-yellow: #F7FE81, carnation: #FB5868, android-green: #AEBD38, sap-green: #598234, east-bay:#50516F);
+$color-schema: map-merge($color-schema, getColorSchemaMap('color-schema'));

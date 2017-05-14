@@ -1,4 +1,4 @@
-$c-selection-radio:();
+$c-selection-radio:( color: map-get($color-schema, carnation), border: map-get($color-schema, android-green), width: 20px, height:20px);
 $c-selection-radio: map-merge($c-selection-radio, getSettingsMap("c-selection-radio"));
 .c-selection-radio {
     width: 100%;
@@ -19,7 +19,7 @@ $c-selection-radio: map-merge($c-selection-radio, getSettingsMap("c-selection-ra
                     label {
                         &:before {
                             content: "\2022";
-                            color: #FB5868;
+                            color: map-get($c-selection-radio, color);
                             font-size: 38px;
                             line-height: 15px;
                         }
@@ -37,15 +37,15 @@ $c-selection-radio: map-merge($c-selection-radio, getSettingsMap("c-selection-ra
             &:before {
                 content: "";
                 display: inline-block;
-                width: 20px;
-                height: 20px;
+                width: map-get($c-selection-radio, width);
+                height: map-get($c-selection-radio, height);
                 margin-right: 10px;
                 position: absolute;
                 left: 0;
                 bottom: -5px;
-                border: 1px solid #Aebd38;
+                border: 1px solid map-get($c-selection-radio, border);
                 box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
-                border-radius: 10px;
+                border-radius: map-get($c-selection-radio, width) / 2;
             }
         }
     }

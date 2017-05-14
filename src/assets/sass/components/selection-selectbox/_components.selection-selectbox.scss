@@ -1,7 +1,7 @@
-$c-selection-selectbox:();
+$c-selection-selectbox:( border: map-get($color-schema, light-gray));
 $c-selection-selectbox: map-merge($c-selection-selectbox, getSettingsMap("c-selection-selectbox"));
 .c-selection-selectbox {
-    border: 1px solid #d5d5d5;
+    border: 1px solid map-get($c-selection-selectbox, border);
     width: 48%;
     border-radius: 3px;
     overflow: hidden;
