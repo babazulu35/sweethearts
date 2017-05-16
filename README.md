@@ -1,5 +1,8 @@
 # SocialSweethearts Js Test Task
 
+### New Calculation Branch Added !!
+pull `new-calculation` branch
+
 -- **For Sass Version please look at the sass-version Branch**
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.30.
