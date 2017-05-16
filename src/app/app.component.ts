@@ -113,10 +113,6 @@ export class AppComponent implements OnInit {
   }  
 
   private calculationResult() {
-    console.log("Pill Rank",this.pillRank);
-    console.log("radio Rank",this.radioRank);
-    console.log("option Rank",this.optionRank);
-    
     this.resultService.getResult([this.ageRank,this.heightRank,this.pillRank,this.radioRank,this.optionRank],{min:this.rankingService.getRatesSum('min'),max:this.rankingService.getRatesSum('max')}); /* Set All Rate Data in ResultService to Calculating Result */
    
   }
