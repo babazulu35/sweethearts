@@ -49,11 +49,6 @@ export class AppComponent implements OnInit {
 }
 
   ngOnInit() {
-
-
-
-
-
     this.isDisabled = true;
      this.resultService.resultEventEmit.subscribe(result => 
      {
@@ -118,7 +113,11 @@ export class AppComponent implements OnInit {
   }  
 
   private calculationResult() {
-    this.resultService.getResult([this.ageRank,this.heightRank,this.pillRank,this.radioRank,this.optionRank]); /* Set All Rate Data in ResultService to Calculating Result */
+    console.log("Pill Rank",this.pillRank);
+    console.log("radio Rank",this.radioRank);
+    console.log("option Rank",this.optionRank);
+    
+    this.resultService.getResult([this.ageRank,this.heightRank,this.pillRank,this.radioRank,this.optionRank],{min:this.rankingService.getRatesSum('min'),max:this.rankingService.getRatesSum('max')}); /* Set All Rate Data in ResultService to Calculating Result */
    
   }
   private again() {

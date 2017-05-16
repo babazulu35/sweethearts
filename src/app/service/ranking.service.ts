@@ -41,7 +41,7 @@ export class RankingService {
         },
         {
           rate:1,
-          value:'71'
+          value:'70'
         }
         ]
       }    
@@ -67,12 +67,12 @@ export class RankingService {
             value:'165'
           },
           {
-            rate:6,
+            rate:5,
             value:'180'
           },
           {
             rate:1,
-            value:'211'
+            value:'210'
           }
         ]
       }    
@@ -106,6 +106,7 @@ export class RankingService {
      }
      ]
    }
+
   }
 
   getOptionRankData(){
@@ -155,17 +156,59 @@ export class RankingService {
       ]
     }
   }
+
+  getRateValue(data:any,type:string){
+    /* Get The Biggest and Smallest Number From Array */
+    let rates = [];
+    if(type =='max')
+    {
+      for(let i = 0; i < data.rank.length; i++)
+      {
+         rates.push(data.rank[i].rate)
+      }
+      return Math.max.apply(Math,rates);
+    }
+    else if(type == 'min')
+    {
+      
+      for(let i = 0; i < data.rank.length; i++)
+      {
+         rates.push(data.rank[i].rate)
+      }
+      
+      return Math.min.apply(Math,rates);      
+    }
+
+    
+  }
+  
+  getRatesSum(type:string){
+    /* Sums All Max. And Min Rate  to find the calculation limitations */
+    let age = this.getRateValue(this.getAgeRankData(),type);
+    let height = this.getRateValue(this.getHeightRankData(),type);
+    let pill = this.getRateValue(this.getPillRankData(),type);
+    let option = this.getRateValue(this.getOptionRankData(),type);
+    let radio = this.getRateValue(this.getRadioRankData(),type);
+    
+    let sum = age + height + pill + option + radio;
+
+    return sum;
+    
+  }
+
   
   getRank(data:any,type:string){
+    /* Just Usable for Range Slider or similar */
     if(type == 'age') {
        let ageData = this.getAgeRankData();
-       let ageRateIndex = ageData.rank.findIndex(element => element.value > data );       
-       return ageData.rank[ageRateIndex-1].rate;
+       let ageRateIndex = ageData.rank.findIndex(element =>  element.value >= data );
+
+       return ageData.rank[ageRateIndex].rate;
     }
     else if(type == 'height') {
       let heightData = this.getHeightRankData();
-      let heightRateIndex = heightData.rank.findIndex(element => element.value > data);
-      return heightData.rank[heightRateIndex-1].rate;
+      let heightRateIndex = heightData.rank.findIndex(element => element.value >= data);
+      return heightData.rank[heightRateIndex].rate;
     }
 
   

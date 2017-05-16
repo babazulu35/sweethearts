@@ -6,10 +6,17 @@ export class ResultService {
   @Output() resultEventEmit = new EventEmitter<any>();
 
   private resultMockData:any;
+
+  avatarSets:{avatar:string}[];
   
   constructor() { }
   
-  
+  avatarSet() {
+    return  this.avatarSets = [
+        { avatar:'monk'},{avatar:'donk'},{avatar:'duck'},{avatar:'tweet'},{avatar:'dog'},{avatar:'monkey'},{avatar:'elephant'},{avatar:'penguin'}, {avatar:'leo'},
+      ]
+  }
+
   calculateResult(data) {
     let total = 0;
     for( var x = 0; x < data.length; x++)
@@ -19,67 +26,46 @@ export class ResultService {
     return Math.ceil(total);
 }
 
-  resultDataSet(data:any) {
-    return this.resultMockData = [
+  resultDataSet(data?:any,calculationLimits?:{min:number,max:number,modus:any}) {
+    let mockDataResults = [];
+    for(let i = 0; i <= calculationLimits.modus.length;i++)
+    {
+
+      if(i == calculationLimits.modus.length)
       {
-        rank:1,
-        avatar:'monk',
-        min: Math.ceil(data.length + 3)
-      },
-      {
-        rank:2,
-        avatar:'donk',
-        min:  Math.ceil(data.length + 6)
-      },
-      {
-        rank:3,
-        avatar:'duck',
-        min: Math.ceil(data.length + 8)
-      },
-      {
-        rank:4,
-        avatar:'tweet',
-        min: Math.ceil(data.length + 10)
-      },
-      {
-        rank:5,
-        avatar:'dog',
-        min: Math.ceil(data.length + 12)
-      },
-      {
-        rank:6,
-        avatar:'monkey',
-        min: Math.ceil(data.length + 16)
-      },
-      {
-        rank:7,
-        avatar:'elephant',
-        min: Math.ceil(data.length + 14)
-      },
-      {
-        rank:8,
-        avatar:'penguin',
-        min: Math.ceil(data.length + 18)
-      },
-      
-      {
-        rank:9,
-        avatar:'leo',
-        min: Math.ceil(data.length * 10)
+        let element = {avatar:this.avatarSet()[i].avatar,rank:i + 1,min:calculationLimits.max};
+        mockDataResults.push(element);
       }
-    ]
+      else
+      {
+        let element = {avatar:this.avatarSet()[i].avatar,rank:i + 1,min:calculationLimits.modus[i]};
+        mockDataResults.push(element);
+      }  
+    }
+
+    return mockDataResults;
+
   }
 
-  getResult(data:any){
-
-    let mockData = this.resultDataSet(data);
-    let rankIndex = mockData.findIndex(element => element.min > this.calculateResult(data));  
+  getResult(data:any,calculationLimits:{max:number,min:number}){
+    console.log(data);
+    var modusData = [];
     
-    /*Emit Data and Make It Subscribaler */
+    for(var i = 1 ; i <= calculationLimits.max; i++ ) {
+      if(i% ( Math.ceil(calculationLimits.max / this.avatarSet().length ) ) == 0) {
+        modusData.push(i);
+      } 
+    }
+
+    let mockData = this.resultDataSet(data,{max:calculationLimits.max,min:calculationLimits.min,modus:modusData});  
+    let rankIndex = mockData.map(items => { return items} ).findIndex( value => value.min >= this.calculateResult(data) );
+ 
+    /*Emit Data and Make It Subscriber */
     this.resultEventEmit.emit({
       result: this.calculateResult(data),
-      rank: mockData[rankIndex].rank,
-      avatar: mockData[rankIndex].avatar
+      rank: mockData[rankIndex-1].rank,
+      avatar: mockData[rankIndex-1].avatar
+     
     })
 
   }
